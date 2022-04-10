@@ -1,0 +1,229 @@
+body,html {
+    height: 100%; box-sizing: border-box;font-family: sans-serif;margin: 0;
+}
+body {padding: 0px 0px 1900px 0px;}
+
+
+/* para solo mostrar el scroll de abajo Y hidden e X scroll,
+cuando una caja esta en inline-bos se adapta al contenido entonces una 
+imagen nunca puede estar fuera, a menos que se use position relative 
+cuando pones hidden en general se tapa lo que sobra pero cuando especifi
+cas un eje esconde el scroll de un eje*/
+#overflow {
+    display: inline-block;
+    border: solid red 10px;
+    width: 50px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+#overflow2 {
+    background-color: orange;
+    display: inline-block;
+    border:  solid red 5px; 
+}
+#overimage {
+    width: 150px;
+    position: relative;top: 20px;left: 20px;
+    transition: 1.1s;
+    
+}
+
+#overflow2:hover > #overimage {
+    top: 0;
+    left: 0;
+}
+
+
+
+/* Los floats solo se usan para envolver una imagen con texto  */
+#float {
+    border: solid green 5px;
+    width: 50%;
+    background: gray;
+}
+#imgfloat {
+    width: 150px;
+    float: right;
+    margin-right: 20px;
+}
+#imgfloat:hover {
+    float: left;
+}
+
+
+
+/* Los pseudo elementos que no necesitan la etiqueta content no son parte del DOM, se 
+declaran con el slector + :: o :
+first-line y first-letter si son parte del DOM y no va con display inline */
+#float::first-letter {
+    font-size: 50px;
+}
+#float::first-line {
+    font-size: 30px;
+}
+
+/* place holder modifica las letras que aparecen antes de escribir en una caja de busqueda
+o input text */
+#pholder {
+    width: 50%;
+    margin: auto;
+    background: gray;
+}
+#write_name {
+    width: 100%;
+}
+#write_name::placeholder { 
+    font-family: 'Courier New', Courier, monospace; font-size: 22px;
+}
+
+/* selection cambia los valores de los elementos seleccionados (por defecto fondo azul y 
+letra blanca) selection tiene como valor inline por lo tanto no se le puede poner un 
+padding etc*/
+#write_name::selection {
+    background: orange;
+    font: black;
+}
+
+/* before y after necesitan el valor content funciona con todos los displays y adentro no
+pueden ir etiquetas */
+#ayb::before {
+    content: "a";
+    color: aqua;
+    background: green;
+}
+#ayb::after {
+    content: "c";
+    color: orangered;
+    background: orange;
+}
+
+
+
+
+/* Las pseudo clases hacen cambios a tiempo real, se declaran con "selector" + : 
+hover se aplica con cualquier tipo de display en transition se puede elegir un atributo en 
+especifico o all 1s*/
+#pseudoc {
+    width: 150px;
+    background: red; 
+    border: solid 5px blue;
+    transition: width .5s, background 0s, border 2s;
+}
+#pseudoc:hover {
+    width: 100px;
+    background: blue; color: white;
+    border: solid 5px  red; 
+}
+
+/*                                      SELECCIÓN DE LINKS
+cuando se modifica las propiedades de la CAJA que esta con link afecta a visites y viceversa 
+a visited se le cambia el background cuando ya hay un predefinido antes y tampoco y muchas
+propiedades las hereda de "a"*/
+a {background: lightblue; }
+a[href="www.dsfhkla.com"]:link {
+    color: blue;background-color: lightgreen ;display: block;
+    
+}
+a[href="https://www.google.com"]:visited {
+    background-color: blue; color: lightgreen;
+}
+
+/* al dejar apretado un boton active permite cambia los estilos */
+#pseudoc4 {
+    display: inline-block;
+    width: 150px;height: 150px;
+    background-color: aqua;
+    margin: 20px;
+}
+#pseudoc4:active {
+    background:grey; 
+}
+
+/* focus cambia propiedades cuando se esta usando un input */
+.focus {
+    background: grey;
+}
+.focus:focus {
+    background: green;
+}
+
+/* lang cambia propiedades segun en que idioma este el selector y tiene como un "content"
+llamado quote */
+#pseudoc6 b:lang(en){
+    color: blue;
+}
+
+
+
+/*                                 OBJECT FIT
+ Se para modificar la resolucion de las imagenes por que las imagenes son elementos 
+remplazados y estos elementos son dificiles de manejar por si solos en css.
+de esta forma la imagen cubre todo el contenedor */
+.object_fit{
+    width: 900px;height: 550px;
+}
+.object_fit-img{
+    height: 100%;width: 100%;
+    object-fit: fill;
+    border: solid red;
+}
+/* Despúes object none hace que la imagen no se redimensione y si es muy grande se sale
+y si es muy chica se mantiene al medio de la caja. 
+Cover mantiene la relacion de aspecto, por lo tanto si la imagen es un cuadrado tomaria 
+la medida más grande para hacer el cuadrado y lo que sobralo recorta (siempre va a sobrar
+la misma cantidad de los 2 lados, la imagen secentra) 
+Contain se toma el eje mas chico entonces se redimensiona la imagen segun ese 
+tamaño y sobra lo mismo de ambos lados.
+Scale-down compara a none y contain y segun cual tendria menor dimensiones es el que aplica
+ */
+
+ /* object-position cambia la posicion de la foto, por lo que de esta forma se puede ver 
+ contenido cortado por cover o contain, tambien se puede usar medidas, pero solo cambia la
+ posicion que esta en horizontal*/
+.object_fit-img{
+    object-fit: cover;
+    object-position:top;
+}
+
+
+
+/* cuando le ponemos cursor a un elemento cambia el cursor cunado esta sobre el o tambien con
+pseudo-clases */
+.cursor {
+    width: 150px;height: 150px;
+    background: #000;
+    border: solid red 10px;
+    cursor: all-scroll;
+}
+.cursor:active {
+    cursor: copy;
+}
+
+
+/*                                COLORS
+No se recomiendo usar nombres por que cada navegador usa definiciones distintas
+
+con RGB ponemos unos numeros en escala hasta 255 de cada color que dice el nombre y en el 
+mismo orden 0 ausencia de color y all 0 = black all 255 = white, con RGBa se agrega opacidad
+como 4ta variable.
+Con hexadecmal se usa del 1 al 9 y de ahi a hasta la f siendo f cono 16,
+se usa la misma escala que en rgb pero se puede usar hasta 2 digitos hexadecimales dando 
+una conbinacion un poco mayor a rgb (16^2 = 256) si se usa 1 digito por color se usa 1 de 
+opcacidad y si no 2, se declara con # tambien hay traductores de hexadecimal a rgb */
+
+
+
+                                   /* RESPONSIVE DESIGN */
+
+/* si desarrollas una pagina pensada para celular y despues haces el diseño para compu 
+google te posiciona mejor la pagina
+en mobile no hay mouse por lo que hover para a tener el rol de active */
+
+/*                                        FLEX-BOX
+
+en flexbox estan las "clases" (digamos) container e item, cuando le das display flexbox a 
+un elemento se comporta como block pero lo que cambia son sus elementos que estan adentro
+o mejor llamados items, estos items tienen que ser "hijos directos" .
+los ejes de los items son x=main-axis y=scroll-axis, por donde corta scroll axis, hace que
+la mitad de la izquierda se llame main-start y la de la derecha main-end, lo mismo cuando
+main-axis corta scroll-axis*/

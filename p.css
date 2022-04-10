@@ -1,0 +1,191 @@
+body {padding-bottom: 5000px;
+padding-top: 10vh;}
+* {margin: 0; box-sizing: border-box;}
+
+/* para poner más de una clase a un elmento se deja un espacio asi: class="clase1 clase2" */
+/* los divs por defecto estan en block */
+/* shorthhum es cuando una propiedad puede ser abreviada ej. border solid red 20px */
+/* La medida "em" usa la medida del contenedor padre como valor 1 (section
+ font size 20px, en el h1 1 em vale 20px) 
+ los pseudos tienen mas jerarquia que los selectores por si solos*/
+
+/* normalize es acomodar los ajuster predeterminados que vienen con los navegadores 
+a unos mas utiles como padding de laterales 0 border box mas width 100% y asi */
+
+ /* box-sizing:border-box ponemos width: 100px y si el contenido ya mide 100px se saca el border y padding
+               content-box ponemos width:100px y el contenido se pone a 100px pero el tamaño de la caja en si no  */
+
+/* box model es un concepto que hace referencia a la jerarquia en la cual se ponen las partes de una
+ caja, llendo de adentro hacia afuera */
+
+/* box shadow permite darle una sombra a la caja se escribe asi: box-shadow:(cuanto se mueve del 
+objeto en eje x)(cuanto se mueve del objeto en eje y)(difuminado)(ancho del borde)(color); */
+#h1 {
+    background-color: rgb(219, 55, 165);
+    box-sizing: border-box;
+    width: 100px;
+    display: inline;
+}
+
+/* outline genera un borde decorativo que no ocupa espacio en el dom (document object model) */
+div {
+    width: 100px;
+    height: 100px;
+  
+}
+.caja1 {
+    background-color: orange;display: block;position: relative;
+}
+
+.caja2 {
+    background-color: aqua;display: block;
+}
+.caja3 {
+    background-color: green;display: block;
+}
+
+.caja4 {
+    background-color: gray;display: block;
+}
+
+/* cuando usar position relative se establece en display inliney y podes mover visualmente los
+ elementos pero su lugar en el dom no cambia (propiedades nuevas: top,left,bottom,right,left
+top y left tienen prioridad sobre los otros valores y los elementos con
+ position relative van a tener prioridad a la hora de mostrarse en pantalla 
+ de los que no). Otra propiedad es Z-index esta establece una jerarquia de 
+cual elementos se muestran encima de  otros segun un valor que escribamos
+(se recomienda subir el valor de a 20 para poder poner mas facilmente
+ elementos en medio)  */
+
+#padre {
+  display: block;
+  background: blue;
+  width: 300px;
+  height: 300px;
+  margin:10px 20px ;
+}
+
+
+#hijo {
+    display: block;
+    background: red;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    z-index: -1;
+    left: -10px;
+    top: -10px;
+}
+
+/* un contenedor hijo por logica siempre se va a estar en la misma posicion 
+(a menos que sea declarada) por y encima del padre independientemente si 
+la propiedad position relative este declarada en el hijo , la unica forma
+de que el padre este por encima del hijo que no declarando el position
+y al hijo pornerle un z index negativo */
+
+
+.contenedor {
+      margin: 50px auto;
+      background: lightgreen;
+      position: absolute;
+      width: 400px; height: 400px;
+     border: solid red 8px;
+     }
+
+
+.box1 {
+    width: 100px; height: 100px;
+    display: block;
+    background: violet;
+    position: absolute;
+    left: 0;
+}
+
+.box2{
+    width: 100px; height: 100px;
+    display: block;
+    background: violet;
+    position: absolute;
+    right: 0;
+}
+
+.box3 {
+    width: 100px; height: 100px;
+    display: block;
+    background: violet;
+    position: absolute;
+    bottom: 0;}
+
+.box4 {
+    width: 100px; height: 100px;
+    display: block; position: absolute;
+    background:violet;
+    bottom: 0;right: 0;
+}
+
+.box5 {
+    width: 100px;height: 100px;
+    display: block; position: inherit;
+    background: green; color: aqua;
+    left: 0; right: 0; top: 0; bottom: 0; margin: auto;
+    text-align: center; line-height: 100px;
+}
+
+/*con position absolute la caja por mas que este block se ajusta automaticamente al contenido y
+pierde su lugar reservado en el dom, tambien si no se declara un ancho y alto la caja se a a ajustar
+automaticamente al contenido. Cuando no definis un top o left  el elemento se posiciona 
+automaticamente con respecto al contenedor, cuando se declara  top, left  etc se toma como referencia
+al viewport si el contenedor no tiene la propiedad position relative
+position absolute. (con top 0 bottom 0 right 0 left 0 margin auto el elemento se centra)*/
+
+nav {
+    background:lightblue;
+    position: fixed; display: flex;
+    width: 100%; height: 8vh;
+    top: 0;left: 0;
+    justify-content: space-between;
+}
+
+.nav_menu {
+    display: inline;
+}
+
+/* position fixed tiene las mismas caracteristicas que absolute y se agrega un lugar fijo en la
+pantalla */
+
+#sticky {
+    width: auto; height: auto;
+    position: sticky;
+    top: 15vh;
+    margin-top: 900px;
+    background: lightblue;
+}
+
+p {
+    margin-top: 300px;
+}
+/* el positio sticky a diferencia del absolute y el fixed si ocupa un espacio en el DOM, y cuando un 
+elemento con esta propiedad aparece se pega a la pantalla como si fuera fixed y cuando choca con el 
+padding del body se queda en ese limite entre el contenido del body y el padding */
+
+
+
+/*overflow controla que pasa con  el contenido que se sale de la caja, normalmente esta
+visible entonces se ve el contenido fuera, hidden lo esconde, skroll le pone una barra de
+navegacion en eje x e y y auto pone la skroll bar en los ejes necesarios nada mas*/
+
+
+
+/*Display cambia si una caja se comporta como inline o block.
+las display table ya no se usan y list item ns. En display inline como la caja se ajusta
+al contenido del elemento no se le puede poner un ancho y alto 
+inline-block: se le puede asignar un ancho al elemento y poner in line
+los grid no importan por que estan obsoletos*/
+.displays {
+    background-color: green;
+    display: inline-block;
+    border: solid grey 6px;
+}
+
+
+/*debido a que dio bugs se sigue en p2 */
