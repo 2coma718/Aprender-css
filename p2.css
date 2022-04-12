@@ -217,13 +217,17 @@ opcacidad y si no 2, se declara con # tambien hay traductores de hexadecimal a r
 
 /* si desarrollas una pagina pensada para celular y despues haces el diseño para compu 
 google te posiciona mejor la pagina
-en mobile no hay mouse por lo que hover para a tener el rol de active */
+en mobile no hay mouse por lo que hover pasa a tener el rol de active */
 
 /*                                        FLEX-BOX
 
-en flexbox estan las "clases" (digamos) container e item, cuando le das display flexbox a 
-un elemento se comporta como block pero lo que cambia son sus elementos que estan adentro
-o mejor llamados items, estos items tienen que ser "hijos directos" .
+en flexbox estan las "clases" (digamos) 
+container e item, cuando le das display
+flexbox a un elemento se comporta como 
+block pero lo que cambia son sus
+ elementos que estan adentro
+o mejor llamados items, estos items 
+tienen que ser "hijos directos" .
 los ejes de los items son x=main-axis y=scroll-axis, por donde corta scroll axis, hace que
 la mitad de la izquierda se llame main-start y la de la derecha main-end, lo mismo cuando
 main-axis corta scroll-axis*/
