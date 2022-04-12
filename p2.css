@@ -213,9 +213,9 @@ opcacidad y si no 2, se declara con # tambien hay traductores de hexadecimal a r
 
 
 
-                                   /* RESPONSIVE DESIGN */
+/*            RESPONSIVE DESIGN 
 
-/*
+
 si desarrollas una pagina pensada para 
 celular y  despues haces el diseño para
 compu google te posiciona mejor la 
@@ -223,7 +223,7 @@ pagina en mobile no hay mouse por lo
 que hover pasa a tener el rol de active
 */
 
-/*                                        FLEX-BOX
+/*                    FLEX-BOX
 
 en flexbox estan las "clases" (digamos)
 container e item, cuando le das display
