@@ -234,6 +234,7 @@ llamados items, estos items tienen que
 ser "hijos directos" . los ejes de los 
 items son x=main-axis y=scroll-axis, por
 donde corta scroll axis, hace que la 
-mitad de la izquierda se llame main-start 
-y la de la derecha main-end, lo mismo 
-cuando main-axis corta scroll-axis*/
+mitad de la izquierda se llame 
+main-start y la de la derecha 
+main-end, lo mismo cuando main-axis 
+corta scroll-axis*/
