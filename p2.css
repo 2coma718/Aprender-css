@@ -231,12 +231,32 @@ container e item, cuando le das display
 flexbox a un elemento se comporta como
 block pero lo que cambia son sus
 elementos que estan adentro o mejor 
-llamados items, estos items tienen que 
-ser "hijos directos" . los ejes de los 
+llamados items estos items tienen que 
+ser "hijos directos" . 
+Los ejes de los 
 items son x=main-axis y=scroll-axis, por
 donde corta scroll axis, hace que la 
 mitad de la izquierda se llame 
 main-start y la de la derecha 
 main-end, lo mismo cuando main-axis 
 corta scroll-axis
+Con flex direction vamos a poder
+modificar los ejes de los axis', 
+cuando le das display flex el contenido
+se adapta automaticamente al contenedor
+osea que no se pasa del por ejemplo el alto
+
+si no se declara el width no aparece el 
+cotenido 
+
+Si se quiere que se adapte
+
 */
+.father {
+    display: flexbox;
+
+}
+.son {
+    background: lightblue;
+    margin:10px; padding:10px;
+}
