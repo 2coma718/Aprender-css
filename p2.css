@@ -255,7 +255,7 @@ usando column para que este en el eje Y,
 tambien cuando le agregas reverse ordena 
 en sentido contrario el contenido */
 .father {
-    display: flex;
+    display: flexbox;
     flex-direction: column;
 
 }
@@ -269,7 +269,7 @@ tamaño de las cajas y si no entra
 se va para abajo la caja o arriba
 si se declara wrap-reverse */
 .flex-container {
-    display: flex;
+    display: flexbox;
     flex-direction: column;
 }
 .flex-item {
