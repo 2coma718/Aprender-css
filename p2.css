@@ -262,6 +262,7 @@ en sentido contrario el contenido */
 .son {
     background: lightblue;
     margin:10px; padding:10px;
+    min-width: 100px;
 }
 /* flex-wrap hace que se respete el
 tamaño de las cajas y si no entra
