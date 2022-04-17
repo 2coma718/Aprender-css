@@ -256,7 +256,7 @@ tambien cuando le agregas reverse ordena
 en sentido contrario el contenido */
 .father {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
 }
 .son {
