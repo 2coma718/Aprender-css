@@ -161,7 +161,7 @@ llamado quote */
 remplazados y estos elementos son dificiles de manejar por si solos en css.
 de esta forma la imagen cubre todo el contenedor */
 .object_fit{
-    width: 900px;height: 550px;
+    width: 100vw;height: 550px;
 }
 .object_fit-img{
     height: 100%;width: 100%;
