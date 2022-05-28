@@ -281,11 +281,25 @@ si se declara wrap-reverse */
 /* con display-flow se abrevia 
 las 2 propiedades anteriores
 */
+
 /*
-para modificar el margin de flex items se usa justifi-content
+Para alinear horizontalmente a flex items se usa justifi-content:
+
+center centra el contenido
 around es igual que el margin auto.
-Space between crea el maximo
-margen solo entre elementos por lo que el del principio y el del final no tiene margen a la izquierda y derecha respectivamentee Spave-evenly hace que quede la misma distancia que no se sumen los margin entonces todo esta a la misma distancia */
+Space between crea el maximo margen solo entre elementos por lo que el del
+principio y el del final no tiene margen a la izquierda y derecha respectivamentee.
+Spave-evenly hace que quede la misma distancia que no se sumen los margin entonces todo esta a la misma distancia 
+
+Margin auto centra en los 2 ejes pasa que en el eje Y no se nota por que el alto del contedor
+es el del contenido
+*/
+
+/* 
+Para alinear verticalmente a flex items se usa text-align:
+
+
+*/
 
 
 
